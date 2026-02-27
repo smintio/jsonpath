@@ -250,7 +250,7 @@ suite('query', function() {
       { path: ['$', 'store', 'book', 3, 'price'], value: data.store.book[3].price }
     ]);
   });
-  
+
   test('union of subscript integer four keys, including an inexistent one, followed by union of subscript string literal three keys', function() {
     var results = jp.nodes(data, "$.store.book[0,1,2,3,151]['title','author','price']");
     assert.deepEqual(results, [
@@ -268,7 +268,7 @@ suite('query', function() {
       { path: ['$', 'store', 'book', 3, 'price'], value: data.store.book[3].price }
     ]);
   });
-  
+
   test('union of subscript integer three keys followed by union of subscript string literal three keys, followed by inexistent literal key', function() {
     var results = jp.nodes(data, "$.store.book[0,1,2,3]['title','author','price','fruit']");
     assert.deepEqual(results, [
@@ -355,5 +355,10 @@ suite('query', function() {
     assert.deepEqual(jp.query({a: 1, b: 2, c: null}, '$..["a","b","c","d"]'), [1, 2, null]);
   });
 
+  test('access dash members', function() {
+    var data = { 'authors-list': { '1': 'Herman Melville', '2': 'J. R. R. Tolkien' } };
+    var results = jp.nodes(data, '$.authors-list.1');
+    assert.deepEqual(results, [ { path: [ '$', 'authors-list', 1 ], value: 'Herman Melville' } ]);
+  });
 });
 

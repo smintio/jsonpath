@@ -4,7 +4,7 @@ var jp = require('../');
 var data = require('./data/store.json');
 
 suite('orig-google-code-issues', function() {
-    
+
   test('comma in eval', function() {
     var pathExpression = '$..book[?(@.price && ",")]'
     var results = jp.query(data, pathExpression);
