@@ -1,7 +1,7 @@
 {
   "name": "@smintio/jsonpath",
   "description": "Query JavaScript objects with JSONPath expressions. Robust / safe JSONPath engine for Node.js.",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "author": "david@fmail.co.uk",
   "typings": "./lib/index.d.ts",
   "scripts": {
