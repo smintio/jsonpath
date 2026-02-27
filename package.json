@@ -1,5 +1,5 @@
 {
-  "name": "jsonpath",
+  "name": "@smintio/jsonpath",
   "description": "Query JavaScript objects with JSONPath expressions. Robust / safe JSONPath engine for Node.js.",
   "version": "1.2.1",
   "author": "david@fmail.co.uk",
